@@ -60,7 +60,7 @@ export default function LandingPage() {
             alt="Pitada"
             className="w-24 h-24 mx-auto mb-6 rounded-3xl shadow-lg"
           />
-          <h1 className="text-4xl font-semibold text-white mb-3">Pitada</h1>
+          <h1 className="text-4xl font-display text-white mb-3">Pitada</h1>
           <p className="text-lg text-white/90 font-body mb-2">
             A tua cozinha, organizada.
           </p>
@@ -94,7 +94,7 @@ export default function LandingPage() {
       {/* Problem / Solution */}
       <section className="max-w-app mx-auto px-6 py-10">
         <div className="bg-white rounded-card p-6 shadow-sm border border-surface-tertiary">
-          <h2 className="text-xl font-semibold text-charcoal mb-3">
+          <h2 className="text-xl font-display text-charcoal mb-3">
             A cozinha precisa de estrutura
           </h2>
           <p className="text-sm text-muted leading-relaxed">
@@ -109,7 +109,7 @@ export default function LandingPage() {
 
       {/* Features */}
       <section className="max-w-app mx-auto px-6 pb-10">
-        <h2 className="text-2xl font-semibold text-charcoal text-center mb-6">
+        <h2 className="text-2xl font-display text-charcoal text-center mb-6">
           O que a Pitada faz
         </h2>
         <div className="space-y-4">
@@ -133,7 +133,7 @@ export default function LandingPage() {
       {/* Recipe Preview */}
       <section className="bg-surface-tertiary py-10">
         <div className="max-w-app mx-auto px-6">
-          <h2 className="text-2xl font-semibold text-charcoal text-center mb-2">
+          <h2 className="text-2xl font-display text-charcoal text-center mb-2">
             52 receitas da família
           </h2>
           <p className="text-sm text-muted text-center mb-6">
@@ -172,7 +172,7 @@ export default function LandingPage() {
 
       {/* How it works */}
       <section className="max-w-app mx-auto px-6 py-10">
-        <h2 className="text-2xl font-semibold text-charcoal text-center mb-6">
+        <h2 className="text-2xl font-display text-charcoal text-center mb-6">
           Como funciona
         </h2>
         <div className="space-y-6">
@@ -214,7 +214,7 @@ export default function LandingPage() {
       {/* Family Safety */}
       <section className="bg-white py-10">
         <div className="max-w-app mx-auto px-6 text-center">
-          <h2 className="text-2xl font-semibold text-charcoal mb-4">
+          <h2 className="text-2xl font-display text-charcoal mb-4">
             Segurança alimentar
           </h2>
           <div className="space-y-3">
@@ -250,7 +250,7 @@ export default function LandingPage() {
 
       {/* CTA */}
       <section className="max-w-app mx-auto px-6 py-12 text-center">
-        <h2 className="text-2xl font-semibold text-charcoal mb-3">
+        <h2 className="text-2xl font-display text-charcoal mb-3">
           Organiza a tua cozinha hoje
         </h2>
         <p className="text-sm text-muted mb-6">
