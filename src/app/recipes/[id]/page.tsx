@@ -129,26 +129,25 @@ export default function RecipeDetailPage() {
       <div className="px-4 py-4 space-y-6">
         {/* Meta row */}
         <div className="flex items-center gap-3 flex-wrap">
-          <span className="text-sm text-stone">⏱ {recipe.prep_time_min} min</span>
+          <span className="text-sm text-stone">{recipe.prep_time_min} min</span>
 
           {/* Servings with +/- */}
           <div className="flex items-center gap-1.5">
-            <span className="text-sm text-stone">🍽</span>
             <button
               type="button"
               onClick={() => setServings((s) => Math.max(1, s - 1))}
-              className="w-7 h-7 rounded-full bg-cream-dark text-charcoal flex items-center justify-center hover:bg-stone-light/30 active:scale-90 font-bold text-sm select-none"
+              className="w-7 h-7 rounded-lg bg-cream-dark text-charcoal flex items-center justify-center hover:bg-stone-light/30 active:scale-90 font-medium text-sm select-none"
               aria-label="Diminuir doses"
             >
               −
             </button>
-            <span className="min-w-[40px] text-center text-sm font-semibold text-charcoal">
+            <span className="min-w-[40px] text-center text-sm font-medium text-charcoal">
               {servings} {servings === 1 ? "dose" : "doses"}
             </span>
             <button
               type="button"
               onClick={() => setServings((s) => s + 1)}
-              className="w-7 h-7 rounded-full bg-terracotta text-white flex items-center justify-center hover:bg-terracotta-dark active:scale-90 font-bold text-sm select-none"
+              className="w-7 h-7 rounded-lg bg-charcoal text-white flex items-center justify-center hover:bg-charcoal-light active:scale-90 font-medium text-sm select-none"
               aria-label="Aumentar doses"
             >
               +
@@ -277,7 +276,7 @@ export default function RecipeDetailPage() {
             className="flex-1"
             onClick={() => setIsFavorite((f) => !f)}
           >
-            {isFavorite ? "❤️ Favorita" : "🤍 Favoritar"}
+            {isFavorite ? "Favorita" : "Favoritar"}
           </Button>
           <Button
             variant="secondary"
@@ -287,7 +286,7 @@ export default function RecipeDetailPage() {
               alert("Ingredientes em falta adicionados ao carrinho (em breve).");
             }}
           >
-            🛒 Adicionar em falta
+            Adicionar em falta
           </Button>
         </div>
       </div>

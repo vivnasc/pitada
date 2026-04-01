@@ -390,7 +390,7 @@ export default function MenuPage() {
       {/* Generate shopping list button */}
       <div className="px-4 py-4">
         <Button onClick={handleGenerateShoppingList} className="w-full" size="lg">
-          🛒 Gerar Lista de Compras
+          Gerar Lista de Compras
         </Button>
       </div>
 

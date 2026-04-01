@@ -67,10 +67,10 @@ export const SHOPPING_SECTIONS = [
 ] as const;
 
 export const MENU_SLOTS = [
-  { value: "lunchbox_lowcarb", label: "🥗 Lancheira Low Carb", sublabel: "Vivianne" },
-  { value: "lunchbox_school", label: "🎒 Lancheira Escolar", sublabel: "Ticy + Breno" },
-  { value: "dinner", label: "🍽️ Jantar", sublabel: "Família" },
-  { value: "dinner_adapted", label: "🥦 Adaptação Vivianne", sublabel: "Sem leite/trigo" },
+  { value: "lunchbox_lowcarb", label: "Lancheira Low Carb", sublabel: "Vivianne" },
+  { value: "lunchbox_school", label: "Lancheira Escolar", sublabel: "Ticy + Breno" },
+  { value: "dinner", label: "Jantar", sublabel: "Familia" },
+  { value: "dinner_adapted", label: "Adaptacao Vivianne", sublabel: "Sem leite/trigo" },
 ] as const;
 
 export const DAYS_OF_WEEK = [
