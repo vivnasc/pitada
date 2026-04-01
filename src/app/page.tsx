@@ -24,11 +24,26 @@ function formatDate(date: Date): string {
   return `${day}, ${num} de ${month}`;
 }
 
-const expiringItems = [
-  { name: "Iogurte natural", expiry: "2026-03-29", daysLeft: 1 },
-  { name: "Peito de frango", expiry: "2026-03-30", daysLeft: 2 },
-  { name: "Espinafre", expiry: "2026-03-27", daysLeft: -1 },
-];
+function getGreeting(): string {
+  const hour = new Date().getHours();
+  if (hour < 12) return "Bom dia";
+  if (hour < 19) return "Boa tarde";
+  return "Boa noite";
+}
+
+function getExpiringItems() {
+  const today = new Date();
+  const items = [
+    { name: "Iogurte natural", daysFromToday: 1 },
+    { name: "Peito de frango", daysFromToday: 2 },
+    { name: "Espinafre", daysFromToday: -1 },
+  ];
+  return items.map((item) => {
+    const expiry = new Date(today);
+    expiry.setDate(expiry.getDate() + item.daysFromToday);
+    return { name: item.name, daysLeft: item.daysFromToday };
+  });
+}
 
 const CATEGORY_COLORS: Record<string, string> = {
   "Prato principal": "bg-terracotta",
@@ -40,6 +55,7 @@ const CATEGORY_COLORS: Record<string, string> = {
 export default function HomePage() {
   const today = new Date();
   const quickRecipes = sampleRecipes.slice(0, 5);
+  const expiringItems = getExpiringItems();
 
   return (
     <PageWrapper>
@@ -47,8 +63,8 @@ export default function HomePage() {
         {/* Hero greeting */}
         <div className="px-5 pt-8 pb-6 bg-gradient-to-b from-surface-secondary to-surface">
           <p className="text-sm font-medium text-muted mb-1">{formatDate(today)}</p>
-          <h1 className="text-[28px] font-semibold text-charcoal leading-tight tracking-tight">
-            Bom dia, Vivianne
+          <h1 className="text-[28px] font-display text-charcoal leading-tight tracking-tight">
+            {getGreeting()}, Vivianne
           </h1>
         </div>
 
@@ -193,7 +209,7 @@ export default function HomePage() {
             <Link href="/lunchbox">
               <div className="border border-surface-tertiary rounded-xl p-4 hover:shadow-card transition-all active:scale-[0.97] bg-surface">
                 <svg className="w-5 h-5 text-muted mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                 </svg>
                 <p className="text-sm font-medium text-charcoal">Lancheiras</p>
                 <p className="text-xs text-muted mt-0.5">Planear semana</p>
