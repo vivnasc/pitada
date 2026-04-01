@@ -53,7 +53,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-cream">
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-terracotta to-terracotta-dark" />
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal to-charcoal-light" />
         <div className="relative max-w-app mx-auto px-6 pt-12 pb-16 text-center">
           <img
             src="/icon-192.png"
@@ -70,9 +70,9 @@ export default function LandingPage() {
           </p>
           <Link
             href="/login"
-            className="inline-block bg-white text-terracotta font-bold py-3 px-8 rounded-xl shadow-md hover:shadow-lg active:scale-95 transition-all text-sm"
+            className="inline-block bg-terracotta text-white font-medium py-3 px-8 rounded-lg shadow-md hover:shadow-lg active:scale-95 transition-all text-sm"
           >
-            Começar agora — é grátis
+            Comecar agora
           </Link>
         </div>
         {/* Wave separator */}
@@ -85,7 +85,7 @@ export default function LandingPage() {
           >
             <path
               d="M0 60V20C240 0 480 0 720 20C960 40 1200 40 1440 20V60H0Z"
-              fill="#FBF7F0"
+              fill="#F8F7F4"
             />
           </svg>
         </div>
@@ -258,9 +258,9 @@ export default function LandingPage() {
         </p>
         <Link
           href="/login"
-          className="inline-block bg-terracotta text-white font-bold py-3 px-8 rounded-xl shadow-md hover:bg-terracotta-dark active:scale-95 transition-all text-sm"
+          className="inline-block bg-terracotta text-white font-medium py-3 px-8 rounded-lg shadow-md hover:bg-terracotta-dark active:scale-95 transition-all text-sm"
         >
-          Começar agora
+          Comecar agora
         </Link>
       </section>
 

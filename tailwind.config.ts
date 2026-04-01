@@ -10,43 +10,43 @@ const config: Config = {
     extend: {
       colors: {
         terracotta: {
-          DEFAULT: "#C2703E",
-          dark: "#A85A2A",
+          DEFAULT: "#B5654A",
+          dark: "#9A5139",
           light: "#D4905E",
         },
         olive: {
-          DEFAULT: "#6B7F4E",
-          light: "#8FA86A",
-          pale: "#E8EDDF",
+          DEFAULT: "#5C7044",
+          light: "#7A9460",
+          pale: "#E4E8DB",
         },
         cream: {
-          DEFAULT: "#FBF7F0",
-          dark: "#F0E8D8",
+          DEFAULT: "#F8F7F4",
+          dark: "#ECEAE4",
         },
-        "warm-white": "#FFFDF8",
+        "warm-white": "#FDFCFA",
         charcoal: {
-          DEFAULT: "#2D2A26",
-          light: "#4A4640",
+          DEFAULT: "#1A1A1A",
+          light: "#3D3D3D",
         },
         stone: {
-          DEFAULT: "#8C8578",
-          light: "#B8B0A4",
+          DEFAULT: "#787571",
+          light: "#A8A4A0",
         },
         rose: {
-          DEFAULT: "#D4726A",
-          light: "#F0A8A2",
+          DEFAULT: "#C45C54",
+          light: "#E8A09A",
         },
         gold: {
-          DEFAULT: "#C9A96E",
-          light: "#E0C88E",
+          DEFAULT: "#B89860",
+          light: "#D4B880",
         },
       },
       fontFamily: {
         display: ["DM Serif Display", "serif"],
-        body: ["Nunito", "sans-serif"],
+        body: ["Inter", "system-ui", "sans-serif"],
       },
       borderRadius: {
-        card: "14px",
+        card: "10px",
       },
       maxWidth: {
         app: "440px",

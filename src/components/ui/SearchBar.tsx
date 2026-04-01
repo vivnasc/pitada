@@ -14,7 +14,7 @@ export default function SearchBar({ value, onClear, className = "", ...props }: 
       <input
         type="search"
         value={value}
-        className="w-full pl-10 pr-8 py-2.5 rounded-xl border border-cream-dark bg-white text-charcoal placeholder:text-stone-light focus:outline-none focus:ring-2 focus:ring-terracotta/30 focus:border-terracotta text-sm font-body"
+        className="w-full pl-10 pr-8 py-2.5 rounded-lg border border-cream-dark bg-white text-charcoal placeholder:text-stone-light focus:outline-none focus:ring-2 focus:ring-terracotta/20 focus:border-terracotta text-sm font-body"
         {...props}
       />
       {value && onClear && (

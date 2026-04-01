@@ -183,19 +183,19 @@ function StockItemRow({
           <button
             type="button"
             onClick={() => onAdjust(item.id, -1)}
-            className="w-11 h-11 rounded-full bg-cream-dark text-charcoal flex items-center justify-center hover:bg-stone-light/30 active:scale-90 font-bold text-lg select-none"
+            className="w-9 h-9 rounded-lg bg-cream-dark text-charcoal flex items-center justify-center hover:bg-stone-light/30 active:scale-90 font-medium text-base select-none"
             aria-label={`Diminuir quantidade de ${item.name}`}
           >
             −
           </button>
-          <span className="min-w-[52px] text-center font-bold text-charcoal select-none">
+          <span className="min-w-[48px] text-center font-semibold text-charcoal select-none text-sm">
             {item.quantity}{" "}
             <span className="text-xs text-stone font-normal">{item.unit}</span>
           </span>
           <button
             type="button"
             onClick={() => onAdjust(item.id, 1)}
-            className="w-11 h-11 rounded-full bg-terracotta text-white flex items-center justify-center hover:bg-terracotta-dark active:scale-90 font-bold text-lg select-none"
+            className="w-9 h-9 rounded-lg bg-charcoal text-white flex items-center justify-center hover:bg-charcoal-light active:scale-90 font-medium text-base select-none"
             aria-label={`Aumentar quantidade de ${item.name}`}
           >
             +

@@ -228,9 +228,9 @@ export default function RecipesPage() {
                         <div className="flex items-center gap-1.5 mt-0.5 text-xs text-stone flex-wrap">
                           <span>{recipe.category}</span>
                           <span>·</span>
-                          <span>⏱ {recipe.prep_time_min} min</span>
+                          <span>{recipe.prep_time_min} min</span>
                           <span>·</span>
-                          <span>🍽 {recipe.servings} doses</span>
+                          <span>{recipe.servings} doses</span>
                           {recipe.difficulty && (
                             <>
                               <span>·</span>

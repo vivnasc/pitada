@@ -11,8 +11,8 @@ export default function Header({ title, showBack, rightAction }: HeaderProps) {
   const router = useRouter();
 
   return (
-    <header className="sticky top-0 z-30 bg-cream border-b border-cream-dark">
-      <div className="max-w-app mx-auto flex items-center h-14 px-4">
+    <header className="sticky top-0 z-30 bg-cream/95 backdrop-blur-sm border-b border-cream-dark">
+      <div className="max-w-app mx-auto flex items-center h-12 px-4">
         {showBack && (
           <button
             onClick={() => router.back()}
@@ -24,7 +24,7 @@ export default function Header({ title, showBack, rightAction }: HeaderProps) {
             </svg>
           </button>
         )}
-        <h1 className="flex-1 text-xl font-display text-charcoal truncate">{title}</h1>
+        <h1 className="flex-1 text-lg font-display text-charcoal truncate">{title}</h1>
         {rightAction && <div className="ml-2">{rightAction}</div>}
       </div>
     </header>
