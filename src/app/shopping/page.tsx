@@ -221,7 +221,7 @@ export default function ShoppingPage() {
       />
 
       {/* Filter pills */}
-      <div className="px-4 py-3 border-b border-cream-dark">
+      <div className="px-4 py-3 border-b border-surface-tertiary">
         <div className="flex gap-2 overflow-x-auto pb-1 -mx-4 px-4 no-scrollbar">
           <button
             type="button"
@@ -229,7 +229,7 @@ export default function ShoppingPage() {
             className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors flex-shrink-0 ${
               filter === "Tudo"
                 ? "bg-terracotta text-white"
-                : "bg-cream-dark text-charcoal"
+                : "bg-surface-tertiary text-charcoal"
             }`}
           >
             Tudo
@@ -246,7 +246,7 @@ export default function ShoppingPage() {
                 className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors flex-shrink-0 ${
                   filter === section.value
                     ? "bg-terracotta text-white"
-                    : "bg-cream-dark text-charcoal"
+                    : "bg-surface-tertiary text-charcoal"
                 }`}
               >
                 {section.emoji} {section.value}
@@ -289,10 +289,10 @@ export default function ShoppingPage() {
                   <span className="text-lg" aria-hidden="true">
                     {info.emoji}
                   </span>
-                  <h3 className="text-xs font-bold text-stone uppercase tracking-wide">
+                  <h3 className="text-xs font-bold text-muted uppercase tracking-wide">
                     {info.label}
                   </h3>
-                  <span className="text-xs text-stone-light">
+                  <span className="text-xs text-muted-light">
                     ({sectionChecked}/{sectionItems.length})
                   </span>
                 </div>
@@ -307,7 +307,7 @@ export default function ShoppingPage() {
                           className={`w-6 h-6 rounded-lg border-2 flex-shrink-0 flex items-center justify-center transition-colors ${
                             item.is_checked
                               ? "bg-terracotta border-terracotta"
-                              : "border-stone-light hover:border-terracotta"
+                              : "border-muted-light hover:border-terracotta"
                           }`}
                           aria-label={
                             item.is_checked
@@ -337,13 +337,13 @@ export default function ShoppingPage() {
                           <p
                             className={`text-sm font-medium ${
                               item.is_checked
-                                ? "line-through text-stone"
+                                ? "line-through text-muted"
                                 : "text-charcoal"
                             }`}
                           >
                             {item.name}
                           </p>
-                          <p className="text-xs text-stone mt-0.5">
+                          <p className="text-xs text-muted mt-0.5">
                             {item.quantity} {item.unit}
                             {item.category && ` · ${item.category}`}
                           </p>
@@ -353,7 +353,7 @@ export default function ShoppingPage() {
                         <button
                           type="button"
                           onClick={() => deleteItem(item.id)}
-                          className="p-1.5 text-stone hover:text-rose active:scale-90 transition-all flex-shrink-0"
+                          className="p-1.5 text-muted hover:text-rose active:scale-90 transition-all flex-shrink-0"
                           aria-label={`Eliminar ${item.name}`}
                         >
                           <svg
@@ -383,7 +383,7 @@ export default function ShoppingPage() {
       {/* Summary bar */}
       {totalCount > 0 && (
         <div className="sticky bottom-16 z-20 mx-4 mb-2">
-          <div className="bg-white rounded-xl border border-cream-dark shadow-md p-3 flex items-center justify-between gap-3">
+          <div className="bg-white rounded-xl border border-surface-tertiary shadow-md p-3 flex items-center justify-between gap-3">
             <div className="text-sm text-charcoal">
               <span className="font-bold">{checkedCount}</span> de{" "}
               <span className="font-bold">{totalCount}</span> itens comprados

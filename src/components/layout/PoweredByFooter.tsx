@@ -1,7 +1,7 @@
 export default function PoweredByFooter({ className = "" }: { className?: string }) {
   return (
     <footer className={`text-center py-4 ${className}`}>
-      <p className="text-xs text-stone">
+      <p className="text-xs text-muted">
         Powered by{" "}
         <a
           href="https://seteecos.com"
@@ -12,8 +12,8 @@ export default function PoweredByFooter({ className = "" }: { className?: string
           Sete Ecos
         </a>
       </p>
-      <p className="text-[10px] text-stone-light mt-1">
-        <a href="mailto:suporte@seteecos.com" className="hover:text-stone transition-colors">
+      <p className="text-[10px] text-muted-light mt-1">
+        <a href="mailto:suporte@seteecos.com" className="hover:text-charcoal transition-colors">
           suporte@seteecos.com
         </a>
       </p>

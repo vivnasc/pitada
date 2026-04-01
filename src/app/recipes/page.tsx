@@ -149,7 +149,7 @@ export default function RecipesPage() {
                   key={key}
                   onClick={() => setActiveFilter(isActive && pill.kind !== "all" ? { kind: "all" } : pill)}
                   className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors flex-shrink-0 ${
-                    isActive ? "bg-terracotta text-white" : "bg-cream-dark text-charcoal"
+                    isActive ? "bg-terracotta text-white" : "bg-surface-tertiary text-charcoal"
                   }`}
                 >
                   {filterLabel(pill)}
@@ -175,7 +175,7 @@ export default function RecipesPage() {
         ) : (
           filtered.map((recipe) => {
             const badges = getAllergenBadges(recipe.ingredients);
-            const bgColor = CATEGORY_COLORS[recipe.category] || "bg-stone";
+            const bgColor = CATEGORY_COLORS[recipe.category] || "bg-muted";
 
             return (
               <Link key={recipe.id} href={`/recipes/${recipe.id}`} className="block">
@@ -192,7 +192,7 @@ export default function RecipesPage() {
                           className="w-full h-full object-cover"
                         />
                       ) : (
-                        <span className="text-3xl sm:text-4xl font-display text-white/80">
+                        <span className="text-3xl sm:text-4xl font-semibold text-white/80">
                           {recipe.name.charAt(0).toUpperCase()}
                         </span>
                       )}
@@ -225,7 +225,7 @@ export default function RecipesPage() {
                         </div>
 
                         {/* Meta line */}
-                        <div className="flex items-center gap-1.5 mt-0.5 text-xs text-stone flex-wrap">
+                        <div className="flex items-center gap-1.5 mt-0.5 text-xs text-muted flex-wrap">
                           <span>{recipe.category}</span>
                           <span>·</span>
                           <span>{recipe.prep_time_min} min</span>

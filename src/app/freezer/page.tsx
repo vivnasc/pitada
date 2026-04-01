@@ -194,12 +194,12 @@ function PortionsBar({
   return (
     <div className="mt-2.5">
       <div className="flex justify-between items-center mb-1">
-        <span className="text-xs text-stone">
+        <span className="text-xs text-muted">
           {remaining}/{total} porções
         </span>
-        <span className="text-xs text-stone">{pct}%</span>
+        <span className="text-xs text-muted">{pct}%</span>
       </div>
-      <div className="h-1.5 w-full rounded-full bg-cream-dark overflow-hidden">
+      <div className="h-1.5 w-full rounded-full bg-surface-tertiary overflow-hidden">
         <div
           className={`h-full rounded-full transition-all ${barColor}`}
           style={{ width: `${pct}%` }}
@@ -237,10 +237,10 @@ function FreezerCard({
       {/* Top row: name + badges */}
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
-          <h3 className="font-display font-semibold text-charcoal text-[15px] leading-tight truncate">
+          <h3 className="font-semibold font-semibold text-charcoal text-[15px] leading-tight truncate">
             {item.name}
           </h3>
-          <p className="text-xs text-stone mt-0.5">{item.category}</p>
+          <p className="text-xs text-muted mt-0.5">{item.category}</p>
         </div>
         <div className="flex flex-col items-end gap-1 flex-shrink-0">
           {isEmpty && <Badge color="red">Esgotado</Badge>}
@@ -254,7 +254,7 @@ function FreezerCard({
       </div>
 
       {/* Frozen date */}
-      <p className="text-xs text-stone mt-1.5">{frozenLabel(item.frozen_at)}</p>
+      <p className="text-xs text-muted mt-1.5">{frozenLabel(item.frozen_at)}</p>
 
       {/* Portions progress */}
       {hasPortions && (
@@ -267,7 +267,7 @@ function FreezerCard({
       {/* Source + use portion button */}
       <div className="flex items-center justify-between mt-3 gap-2">
         {item.source ? (
-          <span className="text-xs text-stone/70 truncate">{item.source}</span>
+          <span className="text-xs text-muted/70 truncate">{item.source}</span>
         ) : (
           <span />
         )}
@@ -346,7 +346,7 @@ function FreezerForm({
           <select
             value={form.category}
             onChange={(e) => set("category", e.target.value)}
-            className="h-10 rounded-xl border border-cream-dark bg-white px-3 text-sm text-charcoal focus:outline-none focus:ring-2 focus:ring-terracotta/40"
+            className="h-10 rounded-xl border border-surface-tertiary bg-white px-3 text-sm text-charcoal focus:outline-none focus:ring-2 focus:ring-terracotta/40"
           >
             {STOCK_CATEGORIES.map((c) => (
               <option key={c} value={c}>
@@ -373,7 +373,7 @@ function FreezerForm({
             checked={!form.is_packet}
             onChange={(e) => set("is_packet", !e.target.checked)}
           />
-          <div className="w-10 h-5 bg-cream-dark rounded-full peer peer-checked:bg-terracotta transition-colors" />
+          <div className="w-10 h-5 bg-surface-tertiary rounded-full peer peer-checked:bg-terracotta transition-colors" />
           <div className="absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform peer-checked:translate-x-5" />
         </label>
         <span className="text-sm text-charcoal">
@@ -537,7 +537,7 @@ export default function FreezerPage() {
                 {lowCount} {lowCount === 1 ? "baixo" : "baixos"}
               </Badge>
             )}
-            <span className="text-stone">{freezerItems.length} itens</span>
+            <span className="text-muted">{freezerItems.length} itens</span>
           </div>
         }
       />
@@ -545,16 +545,16 @@ export default function FreezerPage() {
       {/* Summary bar */}
       <div className="mx-4 mt-3 mb-1 grid grid-cols-2 gap-3">
         <div className="rounded-2xl bg-charcoal/[0.04] border border-charcoal/[0.06] px-4 py-3 text-center">
-          <p className="text-2xl font-display font-bold text-charcoal">
+          <p className="text-2xl font-semibold font-bold text-charcoal">
             {freezerItems.length}
           </p>
-          <p className="text-xs text-stone mt-0.5">itens congelados</p>
+          <p className="text-xs text-muted mt-0.5">itens congelados</p>
         </div>
         <div className="rounded-2xl bg-charcoal/[0.04] border border-charcoal/[0.06] px-4 py-3 text-center">
-          <p className="text-2xl font-display font-bold text-charcoal">
+          <p className="text-2xl font-semibold font-bold text-charcoal">
             {totalPortions}
           </p>
-          <p className="text-xs text-stone mt-0.5">porcoes restantes</p>
+          <p className="text-xs text-muted mt-0.5">porcoes restantes</p>
         </div>
       </div>
 
@@ -575,7 +575,7 @@ export default function FreezerPage() {
               className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors flex-shrink-0 ${
                 !filterCategory
                   ? "bg-terracotta text-white"
-                  : "bg-cream-dark text-charcoal"
+                  : "bg-surface-tertiary text-charcoal"
               }`}
             >
               Todos
@@ -590,7 +590,7 @@ export default function FreezerPage() {
                 className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors flex-shrink-0 ${
                   filterCategory === cat
                     ? "bg-terracotta text-white"
-                    : "bg-cream-dark text-charcoal"
+                    : "bg-surface-tertiary text-charcoal"
                 }`}
               >
                 {cat}
@@ -622,9 +622,9 @@ export default function FreezerPage() {
         ) : (
           grouped.map(([category, catItems]) => (
             <section key={category}>
-              <h3 className="text-xs font-bold text-stone uppercase tracking-wide mb-2">
+              <h3 className="text-xs font-bold text-muted uppercase tracking-wide mb-2">
                 {category}{" "}
-                <span className="font-normal text-stone/60">
+                <span className="font-normal text-muted/60">
                   ({catItems.length})
                 </span>
               </h3>

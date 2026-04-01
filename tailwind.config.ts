@@ -10,31 +10,38 @@ const config: Config = {
     extend: {
       colors: {
         terracotta: {
-          DEFAULT: "#B5654A",
-          dark: "#9A5139",
+          DEFAULT: "#C2693E",
+          dark: "#A85830",
           light: "#D4905E",
+          subtle: "#FDF5F0",
         },
         olive: {
-          DEFAULT: "#5C7044",
-          light: "#7A9460",
+          DEFAULT: "#4D7C3A",
+          light: "#6BA354",
           pale: "#E4E8DB",
+          subtle: "#F2F7EE",
         },
-        cream: {
-          DEFAULT: "#F8F7F4",
-          dark: "#ECEAE4",
+        surface: {
+          DEFAULT: "#FFFFFF",
+          secondary: "#F7F7F5",
+          tertiary: "#EEEDE9",
         },
-        "warm-white": "#FDFCFA",
         charcoal: {
-          DEFAULT: "#1A1A1A",
-          light: "#3D3D3D",
+          DEFAULT: "#111111",
+          light: "#333333",
         },
-        stone: {
-          DEFAULT: "#787571",
-          light: "#A8A4A0",
+        muted: {
+          DEFAULT: "#6B6B6B",
+          light: "#999999",
         },
         rose: {
-          DEFAULT: "#C45C54",
-          light: "#E8A09A",
+          DEFAULT: "#D14343",
+          light: "#F5DADA",
+          subtle: "#FDF2F2",
+        },
+        amber: {
+          DEFAULT: "#D97706",
+          light: "#FEF3C7",
         },
         gold: {
           DEFAULT: "#B89860",
@@ -46,10 +53,15 @@ const config: Config = {
         body: ["Inter", "system-ui", "sans-serif"],
       },
       borderRadius: {
-        card: "10px",
+        card: "12px",
       },
       maxWidth: {
-        app: "440px",
+        app: "600px",
+      },
+      boxShadow: {
+        card: "0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)",
+        "card-hover": "0 4px 12px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06)",
+        nav: "0 -1px 8px rgba(0,0,0,0.06)",
       },
     },
   },

@@ -23,7 +23,7 @@ function ToggleSwitch({ on, onToggle, label, description }: ToggleSwitchProps) {
       <div className="flex-1 min-w-0">
         <p className="text-sm font-body font-medium text-charcoal">{label}</p>
         {description && (
-          <p className="text-xs text-stone mt-0.5">{description}</p>
+          <p className="text-xs text-muted mt-0.5">{description}</p>
         )}
       </div>
       <button
@@ -32,7 +32,7 @@ function ToggleSwitch({ on, onToggle, label, description }: ToggleSwitchProps) {
         aria-label={label}
         onClick={onToggle}
         className={`relative flex-shrink-0 w-11 h-6 rounded-full transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 ${
-          on ? "bg-terracotta" : "bg-stone-light"
+          on ? "bg-terracotta" : "bg-muted-light"
         }`}
       >
         <span
@@ -63,10 +63,10 @@ export default function SettingsPage() {
       <div className="px-4 pt-5 pb-6 space-y-7">
         {/* Notificacoes */}
         <section>
-          <p className="text-xs font-body font-semibold uppercase tracking-wide text-stone mb-2 px-1">
+          <p className="text-xs font-body font-semibold uppercase tracking-wide text-muted mb-2 px-1">
             Notificacoes
           </p>
-          <Card className="divide-y divide-cream-dark">
+          <Card className="divide-y divide-surface-tertiary">
             <ToggleSwitch
               on={alertasValidade}
               onToggle={() => setAlertasValidade((v) => !v)}
@@ -90,7 +90,7 @@ export default function SettingsPage() {
 
         {/* Aparencia */}
         <section>
-          <p className="text-xs font-body font-semibold uppercase tracking-wide text-stone mb-2 px-1">
+          <p className="text-xs font-body font-semibold uppercase tracking-wide text-muted mb-2 px-1">
             Aparencia
           </p>
           <Card>
@@ -103,7 +103,7 @@ export default function SettingsPage() {
                   className={`flex-1 py-2 rounded-lg text-sm font-body font-medium border transition-all duration-150 active:scale-95 ${
                     theme === t
                       ? "bg-terracotta text-white border-terracotta shadow-sm"
-                      : "bg-cream text-stone border-cream-dark hover:border-stone-light hover:text-charcoal"
+                      : "bg-surface-secondary text-muted border-surface-tertiary hover:border-muted-light hover:text-charcoal"
                   }`}
                 >
                   {t}
@@ -115,14 +115,14 @@ export default function SettingsPage() {
 
         {/* Dados */}
         <section>
-          <p className="text-xs font-body font-semibold uppercase tracking-wide text-stone mb-2 px-1">
+          <p className="text-xs font-body font-semibold uppercase tracking-wide text-muted mb-2 px-1">
             Dados
           </p>
           <Card className="space-y-3">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-body font-medium text-charcoal">Exportar dados</p>
-                <p className="text-xs text-stone mt-0.5">Transferir todos os seus dados em JSON</p>
+                <p className="text-xs text-muted mt-0.5">Transferir todos os seus dados em JSON</p>
               </div>
               <Button
                 variant="secondary"
@@ -132,10 +132,10 @@ export default function SettingsPage() {
                 Exportar
               </Button>
             </div>
-            <div className="border-t border-cream-dark pt-3 flex items-center justify-between">
+            <div className="border-t border-surface-tertiary pt-3 flex items-center justify-between">
               <div>
                 <p className="text-sm font-body font-medium text-charcoal">Limpar cache</p>
-                <p className="text-xs text-stone mt-0.5">Remove dados temporarios da aplicacao</p>
+                <p className="text-xs text-muted mt-0.5">Remove dados temporarios da aplicacao</p>
               </div>
               <Button
                 variant="ghost"
@@ -150,20 +150,20 @@ export default function SettingsPage() {
 
         {/* Conta */}
         <section>
-          <p className="text-xs font-body font-semibold uppercase tracking-wide text-stone mb-2 px-1">
+          <p className="text-xs font-body font-semibold uppercase tracking-wide text-muted mb-2 px-1">
             Conta
           </p>
           <Card className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-stone font-body">Email</p>
+                <p className="text-xs text-muted font-body">Email</p>
                 <p className="text-sm font-body font-medium text-charcoal mt-0.5">
                   vivianne@email.com
                 </p>
               </div>
               <Badge color="green">Ativo</Badge>
             </div>
-            <div className="border-t border-cream-dark pt-4">
+            <div className="border-t border-surface-tertiary pt-4">
               <Button
                 variant="danger"
                 size="md"
@@ -178,10 +178,10 @@ export default function SettingsPage() {
 
         {/* Sobre */}
         <section>
-          <p className="text-xs font-body font-semibold uppercase tracking-wide text-stone mb-2 px-1">
+          <p className="text-xs font-body font-semibold uppercase tracking-wide text-muted mb-2 px-1">
             Sobre
           </p>
-          <Card className="divide-y divide-cream-dark">
+          <Card className="divide-y divide-surface-tertiary">
             <div className="flex items-center justify-between py-3">
               <p className="text-sm font-body text-charcoal">Versao da aplicacao</p>
               <Badge color="gray">v1.0.0</Badge>

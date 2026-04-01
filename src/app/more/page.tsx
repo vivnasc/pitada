@@ -8,7 +8,7 @@ import PoweredByFooter from "@/components/layout/PoweredByFooter";
 function ChevronRight() {
   return (
     <svg
-      className="w-5 h-5 text-stone-light flex-shrink-0"
+      className="w-5 h-5 text-muted-light flex-shrink-0"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -87,14 +87,14 @@ export default function MorePage() {
           <Link key={item.title} href={item.href} className="block">
             <Card className="hover:shadow-md active:scale-[0.98] transition-all cursor-pointer">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-cream-dark flex items-center justify-center flex-shrink-0">
+                <div className="w-9 h-9 rounded-lg bg-surface-tertiary flex items-center justify-center flex-shrink-0">
                   {item.icon}
                 </div>
                 <div className="flex-1 min-w-0">
                   <span className="font-medium text-charcoal text-sm">
                     {item.title}
                   </span>
-                  <p className="text-xs text-stone mt-0.5 truncate">
+                  <p className="text-xs text-muted mt-0.5 truncate">
                     {item.description}
                   </p>
                 </div>

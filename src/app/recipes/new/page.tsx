@@ -140,7 +140,7 @@ export default function NewRecipePage() {
                 className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors ${
                   tags.includes(tag)
                     ? "bg-terracotta text-white border-terracotta"
-                    : "bg-white text-charcoal border-cream-dark hover:border-terracotta"
+                    : "bg-white text-charcoal border-surface-tertiary hover:border-terracotta"
                 }`}
               >
                 {tag}
@@ -154,14 +154,14 @@ export default function NewRecipePage() {
           <p className="text-sm font-semibold text-charcoal mb-2">Ingredientes</p>
           <div className="space-y-3">
             {ingredients.map((ing, i) => (
-              <div key={i} className="bg-white rounded-xl border border-cream-dark p-3 space-y-2">
+              <div key={i} className="bg-white rounded-xl border border-surface-tertiary p-3 space-y-2">
                 <div className="flex gap-2">
                   <Input placeholder="Ingrediente" value={ing.name} onChange={(e) => updateIngredient(i, "name", e.target.value)} className="flex-1" />
                   <Input placeholder="Qtd" type="number" value={ing.qty} onChange={(e) => updateIngredient(i, "qty", e.target.value)} className="w-16" />
                   <select
                     value={ing.unit}
                     onChange={(e) => updateIngredient(i, "unit", e.target.value)}
-                    className="px-2 py-2 rounded-xl border border-cream-dark bg-white text-sm w-20"
+                    className="px-2 py-2 rounded-xl border border-surface-tertiary bg-white text-sm w-20"
                   >
                     {STOCK_UNITS.map((u) => (
                       <option key={u} value={u}>{u}</option>
@@ -205,7 +205,7 @@ export default function NewRecipePage() {
                   onChange={(e) => updateStep(i, e.target.value)}
                   placeholder={`Passo ${i + 1}`}
                   rows={2}
-                  className="flex-1 px-3 py-2 rounded-xl border border-cream-dark bg-white text-sm resize-none focus:outline-none focus:ring-2 focus:ring-terracotta/30"
+                  className="flex-1 px-3 py-2 rounded-xl border border-surface-tertiary bg-white text-sm resize-none focus:outline-none focus:ring-2 focus:ring-terracotta/30"
                 />
                 {steps.length > 1 && (
                   <button onClick={() => removeStep(i)} className="text-rose text-xs mt-2">✕</button>
@@ -224,7 +224,7 @@ export default function NewRecipePage() {
             onChange={(e) => setNotes(e.target.value)}
             placeholder="Dicas, variações..."
             rows={3}
-            className="w-full px-3 py-2 rounded-xl border border-cream-dark bg-white text-sm resize-none focus:outline-none focus:ring-2 focus:ring-terracotta/30"
+            className="w-full px-3 py-2 rounded-xl border border-surface-tertiary bg-white text-sm resize-none focus:outline-none focus:ring-2 focus:ring-terracotta/30"
           />
         </div>
 

@@ -5,7 +5,7 @@ interface PageWrapperProps {
 
 export default function PageWrapper({ children, className = "" }: PageWrapperProps) {
   return (
-    <main className={`max-w-app mx-auto min-h-screen bg-cream pb-20 ${className}`}>
+    <main className={`w-full max-w-app mx-auto min-h-screen bg-surface pb-20 ${className}`}>
       {children}
     </main>
   );

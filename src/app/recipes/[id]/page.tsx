@@ -96,7 +96,7 @@ export default function RecipeDetailPage() {
     );
   }
 
-  const bgColor = CATEGORY_COLORS[recipe.category] || "bg-stone";
+  const bgColor = CATEGORY_COLORS[recipe.category] || "bg-muted";
 
   return (
     <PageWrapper>
@@ -111,13 +111,13 @@ export default function RecipeDetailPage() {
             className="w-full h-full object-cover"
           />
         ) : (
-          <span className="text-6xl sm:text-7xl font-display text-white/70">
+          <span className="text-6xl sm:text-7xl font-semibold text-white/70">
             {recipe.name.charAt(0).toUpperCase()}
           </span>
         )}
         {/* Overlay with name */}
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-4 pb-3 pt-8">
-          <h2 className="text-xl sm:text-2xl font-display text-white leading-tight">
+          <h2 className="text-xl sm:text-2xl font-semibold text-white leading-tight">
             {recipe.name}
           </h2>
           {recipe.cuisine && (
@@ -129,14 +129,14 @@ export default function RecipeDetailPage() {
       <div className="px-4 py-4 space-y-6">
         {/* Meta row */}
         <div className="flex items-center gap-3 flex-wrap">
-          <span className="text-sm text-stone">{recipe.prep_time_min} min</span>
+          <span className="text-sm text-muted">{recipe.prep_time_min} min</span>
 
           {/* Servings with +/- */}
           <div className="flex items-center gap-1.5">
             <button
               type="button"
               onClick={() => setServings((s) => Math.max(1, s - 1))}
-              className="w-7 h-7 rounded-lg bg-cream-dark text-charcoal flex items-center justify-center hover:bg-stone-light/30 active:scale-90 font-medium text-sm select-none"
+              className="w-7 h-7 rounded-lg bg-surface-tertiary text-charcoal flex items-center justify-center hover:bg-muted-light/30 active:scale-90 font-medium text-sm select-none"
               aria-label="Diminuir doses"
             >
               −
@@ -181,10 +181,10 @@ export default function RecipeDetailPage() {
 
         {/* Ingredients */}
         <section>
-          <h3 className="text-base font-display text-charcoal mb-3">
+          <h3 className="text-base font-semibold text-charcoal mb-3">
             Ingredientes
             {multiplier !== 1 && (
-              <span className="text-xs text-stone font-body ml-2">
+              <span className="text-xs text-muted font-body ml-2">
                 (ajustado para {servings} {servings === 1 ? "dose" : "doses"})
               </span>
             )}
@@ -201,7 +201,7 @@ export default function RecipeDetailPage() {
                     type="button"
                     onClick={() => toggleCheck(idx)}
                     className={`w-full flex items-center gap-3 text-left py-2 px-3 rounded-xl transition-colors ${
-                      isChecked ? "bg-olive/10" : "bg-white hover:bg-cream-dark/50"
+                      isChecked ? "bg-olive/10" : "bg-white hover:bg-surface-tertiary/50"
                     }`}
                   >
                     {/* Checkbox */}
@@ -209,7 +209,7 @@ export default function RecipeDetailPage() {
                       className={`flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
                         isChecked
                           ? "bg-olive border-olive text-white"
-                          : "border-stone-light"
+                          : "border-muted-light"
                       }`}
                     >
                       {isChecked && (
@@ -222,7 +222,7 @@ export default function RecipeDetailPage() {
                     {/* Name + qty */}
                     <span
                       className={`flex-1 text-sm ${
-                        isChecked ? "line-through text-stone" : "text-charcoal"
+                        isChecked ? "line-through text-muted" : "text-charcoal"
                       }`}
                     >
                       {ing.name}
@@ -246,7 +246,7 @@ export default function RecipeDetailPage() {
 
         {/* Steps */}
         <section>
-          <h3 className="text-base font-display text-charcoal mb-3">Preparação</h3>
+          <h3 className="text-base font-semibold text-charcoal mb-3">Preparação</h3>
           <ol className="space-y-3">
             {recipe.steps.map((step, idx) => (
               <li key={idx} className="flex gap-3">
@@ -262,8 +262,8 @@ export default function RecipeDetailPage() {
         {/* Notes */}
         {recipe.notes && (
           <section>
-            <h3 className="text-base font-display text-charcoal mb-2">Notas</h3>
-            <p className="text-sm text-stone leading-relaxed bg-cream-dark/50 rounded-xl p-3">
+            <h3 className="text-base font-semibold text-charcoal mb-2">Notas</h3>
+            <p className="text-sm text-muted leading-relaxed bg-surface-tertiary/50 rounded-xl p-3">
               {recipe.notes}
             </p>
           </section>

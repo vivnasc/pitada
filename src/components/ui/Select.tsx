@@ -14,14 +14,14 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
     return (
       <div className="w-full">
         {label && (
-          <label htmlFor={selectId} className="block text-sm font-semibold text-charcoal mb-1">
+          <label htmlFor={selectId} className="block text-sm font-medium text-charcoal mb-1.5">
             {label}
           </label>
         )}
         <select
           ref={ref}
           id={selectId}
-          className={`w-full px-3 py-2.5 rounded-lg border border-cream-dark bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-terracotta/20 focus:border-terracotta transition-colors font-body text-sm ${error ? "border-rose" : ""} ${className}`}
+          className={`w-full px-3.5 py-2.5 rounded-lg border border-surface-tertiary bg-surface text-charcoal focus:outline-none focus:ring-2 focus:ring-charcoal/10 focus:border-charcoal transition-colors font-body text-sm ${error ? "border-rose" : ""} ${className}`}
           {...props}
         >
           {placeholder && <option value="">{placeholder}</option>}

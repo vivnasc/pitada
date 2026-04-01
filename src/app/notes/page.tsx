@@ -194,7 +194,7 @@ function NoteForm({ initial, isEdit, onSubmit, onDelete, onCancel }: NoteFormPro
                 className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors border ${
                   isActive
                     ? "bg-terracotta text-white border-terracotta"
-                    : "bg-cream-dark text-charcoal border-transparent"
+                    : "bg-surface-tertiary text-charcoal border-transparent"
                 }`}
               >
                 {cfg.label}
@@ -216,7 +216,7 @@ function NoteForm({ initial, isEdit, onSubmit, onDelete, onCancel }: NoteFormPro
           placeholder="Escreve a tua nota aqui..."
           rows={5}
           required
-          className="w-full px-3 py-2.5 rounded-lg border border-cream-dark bg-white text-charcoal placeholder:text-stone-light focus:outline-none focus:ring-2 focus:ring-terracotta/20 focus:border-terracotta transition-colors font-body text-sm resize-none"
+          className="w-full px-3 py-2.5 rounded-lg border border-surface-tertiary bg-white text-charcoal placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-terracotta/20 focus:border-terracotta transition-colors font-body text-sm resize-none"
         />
       </div>
 
@@ -240,7 +240,7 @@ function NoteForm({ initial, isEdit, onSubmit, onDelete, onCancel }: NoteFormPro
             id="note-recipe"
             value={form.linked_recipe_id}
             onChange={(e) => set("linked_recipe_id", e.target.value)}
-            className="w-full px-3 py-2.5 rounded-lg border border-cream-dark bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-terracotta/20 focus:border-terracotta transition-colors font-body text-sm"
+            className="w-full px-3 py-2.5 rounded-lg border border-surface-tertiary bg-white text-charcoal focus:outline-none focus:ring-2 focus:ring-terracotta/20 focus:border-terracotta transition-colors font-body text-sm"
           >
             <option value="">Nenhuma</option>
             {Object.entries(SAMPLE_RECIPE_NAMES).map(([id, name]) => (
@@ -392,7 +392,7 @@ export default function NotesPage() {
       />
 
       {/* Search + filters */}
-      <div className="px-4 py-3 space-y-3 border-b border-cream-dark">
+      <div className="px-4 py-3 space-y-3 border-b border-surface-tertiary">
         <SearchBar
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -419,7 +419,7 @@ export default function NotesPage() {
                 className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors flex-shrink-0 ${
                   isActive
                     ? "bg-terracotta text-white"
-                    : "bg-cream-dark text-charcoal"
+                    : "bg-surface-tertiary text-charcoal"
                 }`}
               >
                 {pill.label}
@@ -466,7 +466,7 @@ export default function NotesPage() {
                   {/* Top row: badge + date */}
                   <div className="flex items-center justify-between gap-2">
                     <Badge color={cfg.color}>{cfg.label}</Badge>
-                    <span className="text-xs text-stone flex-shrink-0">
+                    <span className="text-xs text-muted flex-shrink-0">
                       {formatDate(note.created_at)}
                     </span>
                   </div>
@@ -480,7 +480,7 @@ export default function NotesPage() {
                   {(linkedRecipeName || note.linked_date) && (
                     <div className="flex items-center gap-3 pt-0.5">
                       {linkedRecipeName && (
-                        <div className="flex items-center gap-1 text-xs text-stone">
+                        <div className="flex items-center gap-1 text-xs text-muted">
                           <svg
                             className="w-3 h-3 flex-shrink-0"
                             fill="none"
@@ -498,7 +498,7 @@ export default function NotesPage() {
                         </div>
                       )}
                       {note.linked_date && (
-                        <div className="flex items-center gap-1 text-xs text-stone">
+                        <div className="flex items-center gap-1 text-xs text-muted">
                           <svg
                             className="w-3 h-3 flex-shrink-0"
                             fill="none"

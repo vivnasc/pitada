@@ -205,8 +205,8 @@ function MemberCard({
     <Card onClick={() => onEdit(member)}>
       <div className="flex items-start gap-3">
         {/* Avatar circle */}
-        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-stone-light/40 border border-cream-dark flex items-center justify-center">
-          <span className="text-base font-display text-charcoal select-none">
+        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-muted-light/40 border border-surface-tertiary flex items-center justify-center">
+          <span className="text-base font-semibold text-charcoal select-none">
             {name.charAt(0).toUpperCase()}
           </span>
         </div>
@@ -214,7 +214,7 @@ function MemberCard({
         <div className="flex-1 min-w-0">
           {/* Name + role row */}
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="font-display text-charcoal text-base leading-tight truncate">
+            <span className="font-semibold text-charcoal text-base leading-tight truncate">
               {name}
             </span>
             <Badge color={ROLE_COLORS[role]}>{ROLE_LABELS[role]}</Badge>
@@ -240,7 +240,7 @@ function MemberCard({
 
           {/* Lunch location */}
           {lunch_at && (
-            <p className="mt-1.5 text-xs text-stone flex items-center gap-1">
+            <p className="mt-1.5 text-xs text-muted flex items-center gap-1">
               <svg
                 className="w-3.5 h-3.5 flex-shrink-0"
                 fill="none"
@@ -266,7 +266,7 @@ function MemberCard({
 
           {/* Preferences */}
           {dietary_profile.preferences && (
-            <p className="mt-1 text-xs text-stone italic truncate">
+            <p className="mt-1 text-xs text-muted italic truncate">
               {dietary_profile.preferences}
             </p>
           )}
@@ -274,7 +274,7 @@ function MemberCard({
 
         {/* Chevron */}
         <svg
-          className="w-4 h-4 text-stone-light flex-shrink-0 mt-0.5"
+          className="w-4 h-4 text-muted-light flex-shrink-0 mt-0.5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -399,7 +399,7 @@ export default function FamilyPage() {
         <div className="px-4 pt-4 pb-6 space-y-3">
           {/* Summary strip */}
           <div className="flex items-center gap-3 mb-1">
-            <p className="text-sm text-stone font-body">
+            <p className="text-sm text-muted font-body">
               {members.length}{" "}
               {members.length === 1 ? "membro" : "membros"} &middot;{" "}
               {members.filter((m) => m.is_child).length} crianças
@@ -466,7 +466,7 @@ export default function FamilyPage() {
                     ? "bg-rose/10 border-rose/40 text-rose"
                     : key === "ovos"
                     ? "bg-amber-100 border-amber-300 text-amber-800"
-                    : "bg-stone-light/30 border-stone-light text-charcoal";
+                    : "bg-muted-light/30 border-muted-light text-charcoal";
                 return (
                   <button
                     key={key}
@@ -475,7 +475,7 @@ export default function FamilyPage() {
                     className={`px-3 py-1 rounded-full text-xs font-semibold border transition-all active:scale-95 ${
                       active
                         ? activeColor
-                        : "bg-white border-cream-dark text-stone hover:border-stone-light"
+                        : "bg-white border-surface-tertiary text-muted hover:border-muted-light"
                     }`}
                   >
                     {label}
@@ -510,7 +510,7 @@ export default function FamilyPage() {
               className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
                 form.is_child
                   ? "bg-terracotta border-terracotta"
-                  : "border-stone-light bg-white"
+                  : "border-muted-light bg-white"
               }`}
             >
               {form.is_child && (
@@ -534,7 +534,7 @@ export default function FamilyPage() {
 
           {/* Child fields */}
           {form.is_child && (
-            <div className="grid grid-cols-2 gap-3 pl-1 border-l-2 border-cream-dark ml-2">
+            <div className="grid grid-cols-2 gap-3 pl-1 border-l-2 border-surface-tertiary ml-2">
               <Input
                 label="Idade"
                 type="number"
@@ -572,7 +572,7 @@ export default function FamilyPage() {
               className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
                 form.eats_with_family
                   ? "bg-terracotta border-terracotta"
-                  : "border-stone-light bg-white"
+                  : "border-muted-light bg-white"
               }`}
             >
               {form.eats_with_family && (
@@ -633,7 +633,7 @@ export default function FamilyPage() {
               <button
                 type="button"
                 onClick={() => setConfirmDelete(false)}
-                className="text-xs text-stone text-center py-1 hover:text-charcoal transition-colors"
+                className="text-xs text-muted text-center py-1 hover:text-charcoal transition-colors"
               >
                 Cancelar
               </button>

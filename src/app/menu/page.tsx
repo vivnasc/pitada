@@ -121,7 +121,7 @@ function SlotSelector({
           className={`flex-1 py-2 rounded-xl text-sm font-semibold transition-colors ${
             mode === "choose"
               ? "bg-terracotta text-white"
-              : "bg-cream-dark text-charcoal"
+              : "bg-surface-tertiary text-charcoal"
           }`}
         >
           Escolher receita
@@ -132,7 +132,7 @@ function SlotSelector({
           className={`flex-1 py-2 rounded-xl text-sm font-semibold transition-colors ${
             mode === "freetext"
               ? "bg-terracotta text-white"
-              : "bg-cream-dark text-charcoal"
+              : "bg-surface-tertiary text-charcoal"
           }`}
         >
           Texto livre
@@ -163,7 +163,7 @@ function SlotSelector({
                     <p className="font-semibold text-charcoal text-sm truncate">
                       {recipe.name}
                     </p>
-                    <p className="text-xs text-stone mt-0.5">
+                    <p className="text-xs text-muted mt-0.5">
                       {recipe.prep_time_min} min · {recipe.servings} porções
                     </p>
                   </div>
@@ -199,7 +199,7 @@ function SlotSelector({
       )}
 
       {/* Clear + close */}
-      <div className="flex gap-3 pt-2 border-t border-cream-dark">
+      <div className="flex gap-3 pt-2 border-t border-surface-tertiary">
         {current && (
           <Button variant="danger" size="sm" onClick={onClear} className="flex-1">
             Limpar
@@ -304,11 +304,11 @@ export default function MenuPage() {
       />
 
       {/* Week navigation */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-cream-dark">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-surface-tertiary">
         <button
           type="button"
           onClick={prevWeek}
-          className="p-2 rounded-full hover:bg-cream-dark active:scale-90 transition-all"
+          className="p-2 rounded-full hover:bg-surface-tertiary active:scale-90 transition-all"
           aria-label="Semana anterior"
         >
           <svg className="w-5 h-5 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -319,7 +319,7 @@ export default function MenuPage() {
         <button
           type="button"
           onClick={nextWeek}
-          className="p-2 rounded-full hover:bg-cream-dark active:scale-90 transition-all"
+          className="p-2 rounded-full hover:bg-surface-tertiary active:scale-90 transition-all"
           aria-label="Próxima semana"
         >
           <svg className="w-5 h-5 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -341,7 +341,7 @@ export default function MenuPage() {
             >
               {/* Day header */}
               <div className="flex items-center gap-2 mb-3">
-                <h3 className="text-sm font-display text-charcoal font-bold">
+                <h3 className="text-sm font-semibold text-charcoal font-bold">
                   {dayName} {formatDate(dayDate)}
                 </h3>
                 {isToday && <Badge color="orange">Hoje</Badge>}
@@ -363,10 +363,10 @@ export default function MenuPage() {
                           slot: slotDef.value as MenuSlot,
                         })
                       }
-                      className="w-full flex items-center gap-2 p-2 rounded-xl bg-cream hover:bg-cream-dark/50 active:scale-[0.98] transition-all text-left"
+                      className="w-full flex items-center gap-2 p-2 rounded-xl bg-surface-secondary hover:bg-surface-tertiary/50 active:scale-[0.98] transition-all text-left"
                       aria-label={`${slotDef.label} - ${dayName}`}
                     >
-                      <span className="text-xs text-stone flex-shrink-0 w-[110px] sm:w-[130px] truncate">
+                      <span className="text-xs text-muted flex-shrink-0 w-[110px] sm:w-[130px] truncate">
                         {slotDef.label}
                       </span>
                       {entry ? (
@@ -374,7 +374,7 @@ export default function MenuPage() {
                           {entry.recipe?.name || entry.free_text}
                         </span>
                       ) : (
-                        <span className="flex-1 text-sm text-stone-light italic">
+                        <span className="flex-1 text-sm text-muted-light italic">
                           + Adicionar
                         </span>
                       )}

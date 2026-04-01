@@ -121,7 +121,7 @@ export default function LunchboxPage() {
             {TRACKS.map((track) => (
               <div key={track.key} className="flex items-center gap-1.5">
                 <Badge color={track.badgeColor}>{track.badge}</Badge>
-                <span className="text-xs text-stone">{track.sublabel}</span>
+                <span className="text-xs text-muted">{track.sublabel}</span>
               </div>
             ))}
           </div>
@@ -129,7 +129,7 @@ export default function LunchboxPage() {
           {/* Day cards */}
           {SCHOOL_DAYS.map((day) => (
             <div key={day} className="space-y-2">
-              <h2 className="text-sm font-display text-charcoal uppercase tracking-wide">{day}</h2>
+              <h2 className="text-sm font-semibold text-charcoal uppercase tracking-wide">{day}</h2>
               <div className="space-y-2">
                 {TRACKS.map((track) => {
                   const recipeId = planner[day][track.key];
@@ -142,7 +142,7 @@ export default function LunchboxPage() {
                     >
                       <div className="flex flex-col gap-1 min-w-0">
                         <div className="flex items-center gap-1.5 flex-wrap">
-                          <span className="text-xs font-semibold text-stone uppercase tracking-wider">
+                          <span className="text-xs font-semibold text-muted uppercase tracking-wider">
                             {track.label}
                           </span>
                           <Badge color={track.badgeColor}>{track.badge}</Badge>
@@ -150,13 +150,13 @@ export default function LunchboxPage() {
                         {recipeName ? (
                           <p className="text-sm font-body text-charcoal truncate">{recipeName}</p>
                         ) : (
-                          <p className="text-sm font-body text-stone-light italic">+ Adicionar</p>
+                          <p className="text-sm font-body text-muted-light italic">+ Adicionar</p>
                         )}
                       </div>
                       {recipeName && (
                         <button
                           onClick={(e) => handleClearSlot(day, track.key, e)}
-                          className="shrink-0 p-1 text-stone hover:text-rose transition-colors"
+                          className="shrink-0 p-1 text-muted hover:text-rose transition-colors"
                           aria-label="Remover receita"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,16 +175,16 @@ export default function LunchboxPage() {
           <Card className="mt-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-display text-charcoal">Slots preenchidos</p>
-                <p className="text-xs text-stone mt-0.5">5 dias, 2 lancheiras por dia</p>
+                <p className="text-sm font-semibold text-charcoal">Slots preenchidos</p>
+                <p className="text-xs text-muted mt-0.5">5 dias, 2 lancheiras por dia</p>
               </div>
               <div className="text-right">
-                <span className="text-2xl font-display text-terracotta">{filledSlots}</span>
-                <span className="text-sm text-stone font-body"> de {totalSlots}</span>
+                <span className="text-2xl font-semibold text-terracotta">{filledSlots}</span>
+                <span className="text-sm text-muted font-body"> de {totalSlots}</span>
               </div>
             </div>
             {/* Progress bar */}
-            <div className="mt-3 h-2 rounded-full bg-cream-dark overflow-hidden">
+            <div className="mt-3 h-2 rounded-full bg-surface-tertiary overflow-hidden">
               <div
                 className="h-full rounded-full bg-terracotta transition-all duration-300"
                 style={{ width: `${(filledSlots / totalSlots) * 100}%` }}
@@ -213,7 +213,7 @@ export default function LunchboxPage() {
           />
         ) : (
           <div className="space-y-2">
-            <p className="text-xs text-stone mb-3">
+            <p className="text-xs text-muted mb-3">
               {activeTrackInfo?.sublabel} &middot; {activeTrackRecipes.length} receitas disponíveis
             </p>
             {activeTrackRecipes.map((recipe) => {
@@ -226,7 +226,7 @@ export default function LunchboxPage() {
                   className={`w-full text-left px-4 py-3 rounded-lg border transition-all ${
                     isSelected
                       ? "border-terracotta bg-terracotta/5 text-terracotta"
-                      : "border-cream-dark bg-white text-charcoal hover:border-terracotta/40 hover:bg-cream"
+                      : "border-surface-tertiary bg-white text-charcoal hover:border-terracotta/40 hover:bg-surface-secondary"
                   }`}
                 >
                   <div className="flex items-start justify-between gap-2">
@@ -259,7 +259,7 @@ export default function LunchboxPage() {
         onClose={() => setClearConfirm(false)}
         title="Limpar plano"
       >
-        <p className="text-sm text-stone mb-6">
+        <p className="text-sm text-muted mb-6">
           Tens a certeza que queres remover todas as receitas do plano semanal?
         </p>
         <div className="flex gap-3">

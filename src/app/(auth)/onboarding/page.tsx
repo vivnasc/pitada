@@ -76,9 +76,9 @@ export default function OnboardingPage() {
     (step === 4);
 
   return (
-    <div className="min-h-screen bg-cream flex flex-col">
+    <div className="min-h-screen bg-surface-secondary flex flex-col">
       {/* Progress bar */}
-      <div className="w-full bg-cream-dark h-1.5">
+      <div className="w-full bg-surface-tertiary h-1.5">
         <div
           className="h-full bg-terracotta transition-all duration-300 rounded-r-full"
           style={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
@@ -98,7 +98,7 @@ export default function OnboardingPage() {
             </svg>
           </button>
         )}
-        <span className="ml-auto text-xs text-stone-light font-semibold">
+        <span className="ml-auto text-xs text-muted-light font-semibold">
           {step} de {TOTAL_STEPS}
         </span>
       </div>
@@ -108,10 +108,10 @@ export default function OnboardingPage() {
         {/* Step 1: Name */}
         {step === 1 && (
           <div className="flex-1 flex flex-col">
-            <h1 className="text-2xl font-display text-charcoal mb-2">
+            <h1 className="text-2xl font-semibold text-charcoal mb-2">
               Como te chamas?
             </h1>
-            <p className="text-sm text-stone-light mb-8">
+            <p className="text-sm text-muted-light mb-8">
               Vamos personalizar a tua experiência.
             </p>
             <Input
@@ -127,10 +127,10 @@ export default function OnboardingPage() {
         {/* Step 2: Role */}
         {step === 2 && (
           <div className="flex-1 flex flex-col">
-            <h1 className="text-2xl font-display text-charcoal mb-2">
+            <h1 className="text-2xl font-semibold text-charcoal mb-2">
               Qual o teu papel?
             </h1>
-            <p className="text-sm text-stone-light mb-6">
+            <p className="text-sm text-muted-light mb-6">
               Podes mudar isto mais tarde.
             </p>
             <div className="grid grid-cols-2 gap-3">
@@ -146,7 +146,7 @@ export default function OnboardingPage() {
                 >
                   <span className="text-3xl block mb-2">{r.emoji}</span>
                   <p className="text-sm font-bold text-charcoal">{r.label}</p>
-                  <p className="text-xs text-stone-light mt-1">{r.desc}</p>
+                  <p className="text-xs text-muted-light mt-1">{r.desc}</p>
                 </Card>
               ))}
             </div>
@@ -156,10 +156,10 @@ export default function OnboardingPage() {
         {/* Step 3: Dietary profile */}
         {step === 3 && (
           <div className="flex-1 flex flex-col">
-            <h1 className="text-2xl font-display text-charcoal mb-2">
+            <h1 className="text-2xl font-semibold text-charcoal mb-2">
               Perfil alimentar
             </h1>
-            <p className="text-sm text-stone-light mb-6">
+            <p className="text-sm text-muted-light mb-6">
               Para filtrar receitas automaticamente.
             </p>
 
@@ -180,7 +180,7 @@ export default function OnboardingPage() {
                         className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all active:scale-95 ${
                           selected
                             ? "bg-terracotta text-white border-terracotta"
-                            : "bg-white text-charcoal border-cream-dark hover:border-terracotta/40"
+                            : "bg-white text-charcoal border-surface-tertiary hover:border-terracotta/40"
                         }`}
                       >
                         {a.label}
@@ -213,43 +213,43 @@ export default function OnboardingPage() {
         {/* Step 4: Summary */}
         {step === 4 && (
           <div className="flex-1 flex flex-col">
-            <h1 className="text-2xl font-display text-charcoal mb-2">
+            <h1 className="text-2xl font-semibold text-charcoal mb-2">
               Quase pronto!
             </h1>
-            <p className="text-sm text-stone-light mb-6">
+            <p className="text-sm text-muted-light mb-6">
               Confirma os teus dados.
             </p>
 
             <Card className="space-y-4">
               <div>
-                <p className="text-xs text-stone-light uppercase tracking-wide">Nome</p>
+                <p className="text-xs text-muted-light uppercase tracking-wide">Nome</p>
                 <p className="text-sm font-semibold text-charcoal">{name || "—"}</p>
               </div>
-              <div className="border-t border-cream-dark pt-3">
-                <p className="text-xs text-stone-light uppercase tracking-wide">Papel</p>
+              <div className="border-t border-surface-tertiary pt-3">
+                <p className="text-xs text-muted-light uppercase tracking-wide">Papel</p>
                 <p className="text-sm font-semibold text-charcoal">
                   {ROLES.find((r) => r.value === role)
                     ? `${ROLES.find((r) => r.value === role)!.emoji} ${ROLES.find((r) => r.value === role)!.label}`
                     : "—"}
                 </p>
               </div>
-              <div className="border-t border-cream-dark pt-3">
-                <p className="text-xs text-stone-light uppercase tracking-wide">Alergias</p>
+              <div className="border-t border-surface-tertiary pt-3">
+                <p className="text-xs text-muted-light uppercase tracking-wide">Alergias</p>
                 <p className="text-sm font-semibold text-charcoal">
                   {allergies.length > 0
                     ? allergies.map((a) => ALLERGIES.find((al) => al.value === a)?.label).join(", ")
                     : "Nenhuma"}
                 </p>
               </div>
-              <div className="border-t border-cream-dark pt-3">
-                <p className="text-xs text-stone-light uppercase tracking-wide">Dieta</p>
+              <div className="border-t border-surface-tertiary pt-3">
+                <p className="text-xs text-muted-light uppercase tracking-wide">Dieta</p>
                 <p className="text-sm font-semibold text-charcoal">
                   {DIETS.find((d) => d.value === diet)?.label || "Não especificada"}
                 </p>
               </div>
               {preferences && (
-                <div className="border-t border-cream-dark pt-3">
-                  <p className="text-xs text-stone-light uppercase tracking-wide">Preferências</p>
+                <div className="border-t border-surface-tertiary pt-3">
+                  <p className="text-xs text-muted-light uppercase tracking-wide">Preferências</p>
                   <p className="text-sm font-semibold text-charcoal">{preferences}</p>
                 </div>
               )}

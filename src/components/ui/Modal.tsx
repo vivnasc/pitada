@@ -28,20 +28,20 @@ export default function Modal({ open, onClose, title, children }: ModalProps) {
       className="fixed inset-0 z-50 flex items-end sm:items-center justify-center"
       onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}
     >
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="relative w-full max-w-app bg-white rounded-t-xl sm:rounded-xl max-h-[85vh] overflow-y-auto animate-slide-up">
-        <div className="sticky top-0 bg-white z-10 px-4 pt-3 pb-2 border-b border-cream-dark">
-          <div className="w-10 h-1 bg-stone-light rounded-full mx-auto mb-3" />
+      <div className="absolute inset-0 bg-charcoal/50 backdrop-blur-[2px]" />
+      <div className="relative w-full max-w-app bg-surface rounded-t-2xl sm:rounded-2xl max-h-[85vh] overflow-y-auto animate-slide-up shadow-xl">
+        <div className="sticky top-0 bg-surface z-10 px-5 pt-3 pb-3 border-b border-surface-tertiary">
+          <div className="w-10 h-1 bg-surface-tertiary rounded-full mx-auto mb-3 sm:hidden" />
           <div className="flex items-center justify-between">
-            {title && <h2 className="text-lg font-display text-charcoal">{title}</h2>}
-            <button onClick={onClose} className="p-1 text-stone hover:text-charcoal" aria-label="Fechar">
+            {title && <h2 className="text-base font-semibold text-charcoal">{title}</h2>}
+            <button onClick={onClose} className="p-1.5 rounded-lg text-muted hover:text-charcoal hover:bg-surface-secondary transition-all" aria-label="Fechar">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
         </div>
-        <div className="p-4">{children}</div>
+        <div className="p-5">{children}</div>
       </div>
     </div>
   );

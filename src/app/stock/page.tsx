@@ -165,7 +165,7 @@ function StockItemRow({
               <Badge color="green">Válido {days}d</Badge>
             )}
           </div>
-          <div className="flex items-center gap-1.5 mt-0.5 text-xs text-stone">
+          <div className="flex items-center gap-1.5 mt-0.5 text-xs text-muted">
             <span>{item.category}</span>
             <span>·</span>
             <span>{loc.label}</span>
@@ -183,14 +183,14 @@ function StockItemRow({
           <button
             type="button"
             onClick={() => onAdjust(item.id, -1)}
-            className="w-9 h-9 rounded-lg bg-cream-dark text-charcoal flex items-center justify-center hover:bg-stone-light/30 active:scale-90 font-medium text-base select-none"
+            className="w-9 h-9 rounded-lg bg-surface-tertiary text-charcoal flex items-center justify-center hover:bg-muted-light/30 active:scale-90 font-medium text-base select-none"
             aria-label={`Diminuir quantidade de ${item.name}`}
           >
             −
           </button>
           <span className="min-w-[48px] text-center font-semibold text-charcoal select-none text-sm">
             {item.quantity}{" "}
-            <span className="text-xs text-stone font-normal">{item.unit}</span>
+            <span className="text-xs text-muted font-normal">{item.unit}</span>
           </span>
           <button
             type="button"
@@ -418,7 +418,7 @@ export default function StockPage() {
             {lowStockCount > 0 && (
               <Badge color="orange">{lowStockCount} baixo{lowStockCount > 1 ? "s" : ""}</Badge>
             )}
-            <span className="text-stone">{items.length} itens</span>
+            <span className="text-muted">{items.length} itens</span>
           </div>
         }
       />
@@ -439,7 +439,7 @@ export default function StockPage() {
             className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors flex-shrink-0 ${
               !filterCategory
                 ? "bg-terracotta text-white"
-                : "bg-cream-dark text-charcoal"
+                : "bg-surface-tertiary text-charcoal"
             }`}
           >
             Todos
@@ -454,7 +454,7 @@ export default function StockPage() {
               className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors flex-shrink-0 ${
                 filterCategory === cat
                   ? "bg-terracotta text-white"
-                  : "bg-cream-dark text-charcoal"
+                  : "bg-surface-tertiary text-charcoal"
               }`}
             >
               {cat}
@@ -485,9 +485,9 @@ export default function StockPage() {
         ) : (
           grouped.map(([category, catItems]) => (
             <section key={category}>
-              <h3 className="text-xs font-bold text-stone uppercase tracking-wide mb-2">
+              <h3 className="text-xs font-bold text-muted uppercase tracking-wide mb-2">
                 {category}{" "}
-                <span className="font-normal text-stone-light">
+                <span className="font-normal text-muted-light">
                   ({catItems.length})
                 </span>
               </h3>

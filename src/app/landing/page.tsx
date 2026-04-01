@@ -50,7 +50,7 @@ const recipeHighlights = [
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-surface-secondary">
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal to-charcoal-light" />
@@ -60,7 +60,7 @@ export default function LandingPage() {
             alt="Pitada"
             className="w-24 h-24 mx-auto mb-6 rounded-3xl shadow-lg"
           />
-          <h1 className="text-4xl font-display text-white mb-3">Pitada</h1>
+          <h1 className="text-4xl font-semibold text-white mb-3">Pitada</h1>
           <p className="text-lg text-white/90 font-body mb-2">
             A tua cozinha, organizada.
           </p>
@@ -85,7 +85,7 @@ export default function LandingPage() {
           >
             <path
               d="M0 60V20C240 0 480 0 720 20C960 40 1200 40 1440 20V60H0Z"
-              fill="#F8F7F4"
+              fill="#FFFFFF"
             />
           </svg>
         </div>
@@ -93,11 +93,11 @@ export default function LandingPage() {
 
       {/* Problem / Solution */}
       <section className="max-w-app mx-auto px-6 py-10">
-        <div className="bg-white rounded-card p-6 shadow-sm border border-cream-dark">
-          <h2 className="text-xl font-display text-charcoal mb-3">
+        <div className="bg-white rounded-card p-6 shadow-sm border border-surface-tertiary">
+          <h2 className="text-xl font-semibold text-charcoal mb-3">
             A cozinha precisa de estrutura
           </h2>
-          <p className="text-sm text-stone leading-relaxed">
+          <p className="text-sm text-muted leading-relaxed">
             Receitas repetidas. Compras desorganizadas. Alergias esquecidas.
             Ninguém sabe o que há no congelador.
           </p>
@@ -109,19 +109,19 @@ export default function LandingPage() {
 
       {/* Features */}
       <section className="max-w-app mx-auto px-6 pb-10">
-        <h2 className="text-2xl font-display text-charcoal text-center mb-6">
+        <h2 className="text-2xl font-semibold text-charcoal text-center mb-6">
           O que a Pitada faz
         </h2>
         <div className="space-y-4">
           {features.map((f) => (
             <div
               key={f.title}
-              className="bg-white rounded-card p-4 shadow-sm border border-cream-dark flex gap-4 items-start"
+              className="bg-white rounded-card p-4 shadow-sm border border-surface-tertiary flex gap-4 items-start"
             >
               <span className="text-3xl flex-shrink-0 mt-0.5">{f.emoji}</span>
               <div>
                 <h3 className="font-bold text-sm text-charcoal">{f.title}</h3>
-                <p className="text-xs text-stone mt-1 leading-relaxed">
+                <p className="text-xs text-muted mt-1 leading-relaxed">
                   {f.description}
                 </p>
               </div>
@@ -131,12 +131,12 @@ export default function LandingPage() {
       </section>
 
       {/* Recipe Preview */}
-      <section className="bg-cream-dark py-10">
+      <section className="bg-surface-tertiary py-10">
         <div className="max-w-app mx-auto px-6">
-          <h2 className="text-2xl font-display text-charcoal text-center mb-2">
+          <h2 className="text-2xl font-semibold text-charcoal text-center mb-2">
             52 receitas da família
           </h2>
-          <p className="text-sm text-stone text-center mb-6">
+          <p className="text-sm text-muted text-center mb-6">
             Moçambicanas, portuguesas e internacionais — todas com flags de
             alergia.
           </p>
@@ -150,7 +150,7 @@ export default function LandingPage() {
                   <span className="font-semibold text-sm text-charcoal">
                     {r.name}
                   </span>
-                  <span className="text-xs text-stone ml-2">{r.cuisine}</span>
+                  <span className="text-xs text-muted ml-2">{r.cuisine}</span>
                 </div>
                 <span
                   className={`text-xs font-semibold px-2 py-0.5 rounded-full ${
@@ -164,7 +164,7 @@ export default function LandingPage() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-stone text-center mt-3">
+          <p className="text-xs text-muted text-center mt-3">
             + 46 receitas mais...
           </p>
         </div>
@@ -172,7 +172,7 @@ export default function LandingPage() {
 
       {/* How it works */}
       <section className="max-w-app mx-auto px-6 py-10">
-        <h2 className="text-2xl font-display text-charcoal text-center mb-6">
+        <h2 className="text-2xl font-semibold text-charcoal text-center mb-6">
           Como funciona
         </h2>
         <div className="space-y-6">
@@ -204,7 +204,7 @@ export default function LandingPage() {
               </div>
               <div>
                 <h3 className="font-bold text-sm text-charcoal">{s.title}</h3>
-                <p className="text-xs text-stone mt-0.5">{s.desc}</p>
+                <p className="text-xs text-muted mt-0.5">{s.desc}</p>
               </div>
             </div>
           ))}
@@ -214,7 +214,7 @@ export default function LandingPage() {
       {/* Family Safety */}
       <section className="bg-white py-10">
         <div className="max-w-app mx-auto px-6 text-center">
-          <h2 className="text-2xl font-display text-charcoal mb-4">
+          <h2 className="text-2xl font-semibold text-charcoal mb-4">
             Segurança alimentar
           </h2>
           <div className="space-y-3">
@@ -222,7 +222,7 @@ export default function LandingPage() {
               <span className="inline-block bg-rose/10 text-rose text-xs font-bold px-3 py-1 rounded-full mb-2">
                 ⚠ Contém leite/trigo
               </span>
-              <p className="text-xs text-stone">
+              <p className="text-xs text-muted">
                 Badge vermelha — sempre visível, nunca escondida. Protege quem
                 tem intolerância.
               </p>
@@ -231,7 +231,7 @@ export default function LandingPage() {
               <span className="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full mb-2">
                 ⚠ Contém ovos
               </span>
-              <p className="text-xs text-stone">
+              <p className="text-xs text-muted">
                 Badge laranja — protege quem tem alergia a ovos. Lancheiras
                 escolares nunca incluem ovos.
               </p>
@@ -240,7 +240,7 @@ export default function LandingPage() {
               <span className="inline-block bg-olive/10 text-olive text-xs font-bold px-3 py-1 rounded-full mb-2">
                 ✓ Seguro para todos
               </span>
-              <p className="text-xs text-stone">
+              <p className="text-xs text-muted">
                 Badge verde — toda a família pode comer sem preocupação.
               </p>
             </div>
@@ -250,10 +250,10 @@ export default function LandingPage() {
 
       {/* CTA */}
       <section className="max-w-app mx-auto px-6 py-12 text-center">
-        <h2 className="text-2xl font-display text-charcoal mb-3">
+        <h2 className="text-2xl font-semibold text-charcoal mb-3">
           Organiza a tua cozinha hoje
         </h2>
-        <p className="text-sm text-stone mb-6">
+        <p className="text-sm text-muted mb-6">
           Grátis. Instala no telemóvel. Sem passwords.
         </p>
         <Link
@@ -272,7 +272,7 @@ export default function LandingPage() {
             alt="Pitada"
             className="w-12 h-12 mx-auto mb-3 rounded-xl opacity-90"
           />
-          <p className="text-sm text-white/80 font-display">Pitada</p>
+          <p className="text-sm text-white/80 font-semibold">Pitada</p>
           <p className="text-xs text-white/50 mt-1">
             A tua cozinha, organizada.
           </p>

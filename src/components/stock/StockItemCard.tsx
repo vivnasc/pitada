@@ -32,21 +32,21 @@ export default function StockItemCard({ item, onAdjust, onClick }: StockItemCard
             {isExpiring && !isExpired && <Badge color="orange">Expira em {daysToExpiry}d</Badge>}
           </div>
           <div className="flex items-center gap-2 mt-0.5">
-            <span className="text-xs text-stone">{item.category}</span>
-            <span className="text-xs text-stone">•</span>
-            <span className="text-xs text-stone">{location?.label}</span>
+            <span className="text-xs text-muted">{item.category}</span>
+            <span className="text-xs text-muted">•</span>
+            <span className="text-xs text-muted">{location?.label}</span>
           </div>
         </div>
         <div className="flex items-center gap-1">
           <button
             onClick={(e) => { e.stopPropagation(); onAdjust(item.id, -1); }}
-            className="w-8 h-8 rounded-full bg-cream-dark text-charcoal flex items-center justify-center hover:bg-stone-light/30 active:scale-90 font-bold"
+            className="w-8 h-8 rounded-full bg-surface-tertiary text-charcoal flex items-center justify-center hover:bg-muted-light/30 active:scale-90 font-bold"
             aria-label="Diminuir quantidade"
           >
             −
           </button>
           <span className="min-w-[48px] text-center font-bold text-charcoal">
-            {item.quantity} <span className="text-xs text-stone font-normal">{item.unit}</span>
+            {item.quantity} <span className="text-xs text-muted font-normal">{item.unit}</span>
           </span>
           <button
             onClick={(e) => { e.stopPropagation(); onAdjust(item.id, 1); }}

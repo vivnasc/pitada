@@ -5,8 +5,8 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap");
 
 :root {
-  --background: #F8F7F4;
-  --foreground: #1A1A1A;
+  --background: #FFFFFF;
+  --foreground: #111111;
 }
 
 body {
@@ -62,7 +62,7 @@ body {
 
 /* Focus visible for keyboard a11y */
 *:focus-visible {
-  outline: 2px solid #B5654A;
+  outline: 2px solid #C2693E;
   outline-offset: 2px;
   border-radius: 4px;
 }
